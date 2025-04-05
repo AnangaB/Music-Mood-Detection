@@ -1,0 +1,5 @@
+venv/
+Data/Lyrics/Lyrics Extraction/.env
+Data/MoodyLyrics/
+Data/Spotify Data/
+Data/Lyrics/Lyrics Extraction/Lyrics Data Output/lyrics_output.csv
