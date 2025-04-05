@@ -1,5 +1,6 @@
 venv/
-Data/Lyrics/Lyrics Extraction/.env
-Data/MoodyLyrics/
-Data/Spotify Data/
-Data/Lyrics/Lyrics Extraction/Lyrics Data Output/lyrics_output.csv
+1 Extract/Data/Lyrics/Lyrics Extraction/.env
+1 Extract/Data/Lyrics/Lyrics Extraction/Lyrics Data Output/lyrics_output.csv
+1 Extract/Data/Raw Data/MoodyLyrics/
+1 Extract/Data/Raw Data/Spotify Data/
+**/__pycache__/

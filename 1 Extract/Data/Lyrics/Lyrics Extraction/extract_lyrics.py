@@ -13,10 +13,10 @@ else:
     existing_songs = set()
 
 # Load songs
-songs_df = pd.read_csv("./../../songs.csv")  # has cols 'Title' and 'Artist'
+songs_df = pd.read_csv("./../../Raw Data/songs.csv")  # has cols 'Title' and 'Artist'
 
 # Load Spotify data (fallback source)
-spotify_data = pd.read_csv("./../../Spotify Data/spotify_millsongdata.csv")
+spotify_data = pd.read_csv("./../../Raw Data/Spotify Data/spotify_millsongdata.csv")
 
 # Filter out songs that have already been processed
 remaining_songs_df = songs_df[~songs_df.apply(lambda row: (row['Title'], row['Artist']) in existing_songs, axis=1)]
