@@ -1,7 +1,7 @@
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense
 from tensorflow.keras.utils import to_categorical
-from helper import get_Word2Vec_train_test_data  # Ensure this function is correctly implemented
+from helper import get_Word2Vec_train_test_data
 
 # Load data
 X_train, X_test, y_train, y_test = get_Word2Vec_train_test_data()
@@ -14,7 +14,7 @@ y_test_cat = to_categorical(y_test, num_classes=4)
 model_T1 = Sequential([
     LSTM(64, activation='tanh', recurrent_activation='sigmoid', dropout=0.2, recurrent_dropout=0.2, input_shape=(X_train.shape[1], 1)),
     Dense(128, activation='relu'),
-    Dense(4, activation='softmax')  # Output layer for 4 classes
+    Dense(4, activation='softmax')
 ])
 
 # Compile the model
@@ -34,4 +34,4 @@ model_T1.fit(X_train_reshaped, y_train_cat, validation_data=(X_test_reshaped, y_
 loss, accuracy = model_T1.evaluate(X_test_reshaped, y_test_cat, verbose=1)
 
 # Output the test accuracy
-print(f"Test Accuracy for Model T₁: {accuracy * 100:.2f}%")
+print(f"Test Accuracy for Model T1: {accuracy * 100:.2f}%")
