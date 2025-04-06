@@ -4,10 +4,10 @@ from tensorflow.keras.utils import to_categorical
 import pandas as pd
 
 # Load data
-X_train = pd.read_csv("./../../../2 Transform/Lyrics/Train Test Set/Output/x_train.csv")
-X_test = pd.read_csv("./../../../2 Transform/Lyrics/Train Test Set/Output/x_test.csv")
-y_train = pd.read_csv("./../../../2 Transform/Lyrics/Train Test Set/Output/y_train.csv")
-y_test = pd.read_csv("./../../../2 Transform/Lyrics/Train Test Set/Output/y_test.csv")
+X_train = pd.read_csv("./../../../2 Transform/Lyrics/2 Train Test Set/Output/x_train.csv")
+X_test = pd.read_csv("./../../../2 Transform/Lyrics/2 Train Test Set/Output/x_test.csv")
+y_train = pd.read_csv("./../../../2 Transform/Lyrics/2 Train Test Set/Output/y_train.csv")
+y_test = pd.read_csv("./../../../2 Transform/Lyrics/2 Train Test Set/Output/y_test.csv")
 
 # Convert labels to one-hot encoding
 y_train_cat = to_categorical(y_train, num_classes=4)
@@ -36,4 +36,4 @@ model_T1_prime.fit(X_train, y_train_cat, validation_data=(X_test, y_test_cat), e
 # Evaluate model on test set
 loss, accuracy = model_T1_prime.evaluate(X_test, y_test_cat, verbose=1)
 
-print(f"Test Accuracy for Model T₁': {accuracy * 100:.2f}%")
+print(f"Test Accuracy for Model T1': {accuracy * 100:.2f}%")

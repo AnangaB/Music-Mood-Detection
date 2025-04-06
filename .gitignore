@@ -7,4 +7,5 @@ venv/
 1 Extract/Data/Raw Data/Spotify Data/
 1 Extract/Data/Lyrics/2 Make Mood Lyrics Dataset/Output/songs_lyrics_mood.csv
 
-2 Transform/Lyrics/Train Test Set/Output/*.csv
+2 Transform/Lyrics/1 Clean Up Lyrics/Output/*.csv
+2 Transform/Lyrics/2 Train Test Set/Output/*.csv
