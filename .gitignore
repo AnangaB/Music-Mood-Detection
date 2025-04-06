@@ -10,3 +10,4 @@ venv/
 2 Transform/Lyrics/1 Clean Up Lyrics/Output/*.csv
 2 Transform/Lyrics/2 Train Test Set/Output/BoW/*.csv
 2 Transform/Lyrics/2 Train Test Set/Output/TF-IDF/*.csv
+2 Transform/Lyrics/2 Train Test Set/Output/Word2Vec/*.csv
