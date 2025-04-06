@@ -31,7 +31,7 @@ model_T1_prime.compile(loss='categorical_crossentropy', optimizer='adam', metric
 model_T1_prime.summary()
 
 # Train the model
-history = model_T1_prime.fit(X_train, y_train_cat, validation_data=(X_test, y_test_cat), epochs=100, batch_size=256)
+history = model_T1_prime.fit(X_train, y_train_cat, validation_data=(X_test, y_test_cat), epochs=20, batch_size=256)
 
 # Evaluate model on test set
 loss, accuracy = model_T1_prime.evaluate(X_test, y_test_cat, verbose=1)
