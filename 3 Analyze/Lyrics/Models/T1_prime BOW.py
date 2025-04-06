@@ -38,4 +38,5 @@ loss, accuracy = model_T1_prime.evaluate(X_test, y_test_cat, verbose=1)
 
 print(f"Test Accuracy for Model T1': {accuracy * 100:.2f}%")
 
-save_models_stats(history, "T1_GloVe")
+save_models_stats(history, "T1_Prime_BOW")
+
