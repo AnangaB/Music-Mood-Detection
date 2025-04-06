@@ -61,3 +61,14 @@ def get_GloVe_train_test_data():
     X_test_reshaped = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
     
     return X_train_reshaped, X_test_reshaped, y_train, y_test
+
+def get_BERT_train_test_data():
+    # Read the first column from CSV and ensure they're strings
+    X_train = pd.read_csv("./../../../2 Transform/Lyrics/2 Train Test Set/Output/BERT/x_train.csv").iloc[:, 0].astype(str).tolist()
+    X_test = pd.read_csv("./../../../2 Transform/Lyrics/2 Train Test Set/Output/BERT/x_test.csv").iloc[:, 0].astype(str).tolist()
+    
+    # Read the labels and flatten if necessary
+    y_train = pd.read_csv("./../../../2 Transform/Lyrics/2 Train Test Set/Output/BERT/y_train.csv").to_numpy().flatten()
+    y_test = pd.read_csv("./../../../2 Transform/Lyrics/2 Train Test Set/Output/BERT/y_test.csv").to_numpy().flatten()
+    
+    return X_train, X_test, y_train, y_test

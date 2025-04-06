@@ -13,3 +13,4 @@ venv/
 2 Transform/Lyrics/2 Train Test Set/Output/TF-IDF/*.csv
 2 Transform/Lyrics/2 Train Test Set/Output/Word2Vec/*.csv
 2 Transform/Lyrics/2 Train Test Set/Output/GloVe/*.csv
+2 Transform/Lyrics/2 Train Test Set/Output/BERT/*.csv
