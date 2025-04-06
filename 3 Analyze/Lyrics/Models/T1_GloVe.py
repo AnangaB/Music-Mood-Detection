@@ -3,7 +3,7 @@ import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense
 from tensorflow.keras.utils import to_categorical
-from helper import get_GloVe_train_test_data 
+from helper import get_GloVe_train_test_data, save_models_stats
 
 X_train, X_test, y_train, y_test = get_GloVe_train_test_data()
 
@@ -31,10 +31,12 @@ X_train_reshaped = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))  # (
 X_test_reshaped = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))  # (samples, embedding_size, 1)
 
 # Train the model
-model_T1.fit(X_train_reshaped, y_train_cat, validation_data=(X_test_reshaped, y_test_cat), epochs=20, batch_size=512)
+history = model_T1.fit(X_train_reshaped, y_train_cat, validation_data=(X_test_reshaped, y_test_cat), epochs=20, batch_size=512)
 
 # Evaluate the model on test set
 loss, accuracy = model_T1.evaluate(X_test_reshaped, y_test_cat, verbose=1)
 
 # Output the test accuracy
 print(f"Test Accuracy for Model T1: {accuracy * 100:.2f}%")
+
+save_models_stats(history, "T1_GloVe")

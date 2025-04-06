@@ -3,7 +3,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense,Dropout
 from tensorflow.keras.utils import to_categorical
 import pandas as pd
-from helper import get_tf_idf_train_test_data 
+from helper import get_tf_idf_train_test_data, save_models_stats
 
 X_train, X_test, y_train, y_test = get_tf_idf_train_test_data()
 
@@ -31,9 +31,11 @@ model_T1_prime.compile(loss='categorical_crossentropy', optimizer='adam', metric
 model_T1_prime.summary()
 
 # Train the model
-model_T1_prime.fit(X_train, y_train_cat, validation_data=(X_test, y_test_cat), epochs=100, batch_size=256)
+history = model_T1_prime.fit(X_train, y_train_cat, validation_data=(X_test, y_test_cat), epochs=100, batch_size=256)
 
 # Evaluate model on test set
 loss, accuracy = model_T1_prime.evaluate(X_test, y_test_cat, verbose=1)
 
 print(f"Test Accuracy for Model T1': {accuracy * 100:.2f}%")
+
+save_models_stats(history, "T1_Prime_TF_IDF")

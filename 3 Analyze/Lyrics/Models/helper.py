@@ -72,3 +72,14 @@ def get_BERT_train_test_data():
     y_test = pd.read_csv("./../../../2 Transform/Lyrics/2 Train Test Set/Output/BERT/y_test.csv").to_numpy().flatten()
     
     return X_train, X_test, y_train, y_test
+
+
+def save_models_stats(history, model_name):
+    
+    # Convert training history to DataFrame
+    history_df = pd.DataFrame(history.history)
+    history_df["epoch"] = history_df.index + 1  # Add epoch number
+
+    # Save training history
+    history_df.to_csv(f"output/{model_name}_training_history.csv", index=False)
+    print(f"Saved training history to {model_name}_training_history.csv")

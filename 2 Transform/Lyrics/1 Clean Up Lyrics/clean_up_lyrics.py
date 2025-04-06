@@ -2,7 +2,7 @@ import pandas as pd
 import re
 
 # Load the dataset
-df = pd.read_csv("./../../../1 Extract/Data/Lyrics/2 Make Mood Lyrics Dataset/Output/songs_lyrics_mood.csv")
+df = pd.read_csv("./../../../1 Extract/Data/Lyrics/3 Make Mood Lyrics Dataset/Output/songs_lyrics_mood.csv")
 
 # Function to clean lyrics
 def clean_lyrics(lyrics):
@@ -35,6 +35,14 @@ split_lyrics_list, expanded_labels = split_lyrics(df["lyrics"], labels_encoded, 
 
 # Create a new DataFrame from the split lyrics and the expanded labels
 new_df = pd.DataFrame(zip(split_lyrics_list, expanded_labels), columns=["lyrics", "Mood"])
+# Drop rows where lyrics are NaN or empty/whitespace only
+new_df = new_df.dropna(subset=['lyrics'])
+new_df = new_df[new_df['lyrics'].str.strip() != '']
 
 # Save the cleaned dataset with subtexts
 new_df.to_csv("./Output/Clean_lyrics_mood_dataset.csv", index=False)
+
+
+# Print summary
+print(f"Original number of songs: {len(df)}")
+print(f"Number of subtext rows after splitting: {len(new_df)}")

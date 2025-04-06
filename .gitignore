@@ -1,11 +1,13 @@
 venv/
 **/__pycache__/
 
-1 Extract/Data/Lyrics/1 Lyrics Extraction/.env
-1 Extract/Data/Lyrics/1 Lyrics Extraction/Lyrics Data Output/lyrics_output.csv
+
+1 Extract/Data/Lyrics/1 Compile Songs List/Output/*.csv
+1 Extract/Data/Lyrics/2 Lyrics Extraction/.env
+1 Extract/Data/Lyrics/2 Lyrics Extraction/Lyrics Data Output/lyrics_output.csv
 1 Extract/Data/Raw Data/MoodyLyrics/
 1 Extract/Data/Raw Data/Spotify Data/
-1 Extract/Data/Lyrics/2 Make Mood Lyrics Dataset/Output/songs_lyrics_mood.csv
+1 Extract/Data/Lyrics/3 Make Mood Lyrics Dataset/Output/songs_lyrics_mood.csv
 1 Extract/Data/Raw Data/glove.6B.100d.txt
 
 2 Transform/Lyrics/1 Clean Up Lyrics/Output/*.csv
