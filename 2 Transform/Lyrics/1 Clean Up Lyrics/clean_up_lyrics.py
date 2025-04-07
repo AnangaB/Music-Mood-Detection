@@ -46,3 +46,6 @@ new_df.to_csv("./Output/Clean_lyrics_mood_dataset.csv", index=False)
 # Print summary
 print(f"Original number of songs: {len(df)}")
 print(f"Number of subtext rows after splitting: {len(new_df)}")
+
+print("Distribution of moods in original dataset: ", df["Mood"].value_counts())
+print("Distribution of moods in after splitting lyrics dataset: ", new_df["Mood"].value_counts())
